@@ -92,6 +92,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     formatter.dateStyle = dateStyle;
     formatter.timeStyle = timeStyle;
 //    formatter.locale = [NSLocale currentLocale]; // Necessary?
+    formatter.calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
     return [formatter stringFromDate:self];
 }
 
