@@ -83,6 +83,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     NSDateFormatter *formatter = [NSDateFormatter new];
 //    formatter.locale = [NSLocale currentLocale]; // Necessary?
     formatter.dateFormat = format;
+
     formatter.calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
     return [formatter stringFromDate:self];
 }
@@ -93,7 +94,7 @@ static const unsigned componentFlags = (NSCalendarUnitYear| NSCalendarUnitMonth 
     formatter.dateStyle = dateStyle;
     formatter.timeStyle = timeStyle;
 //    formatter.locale = [NSLocale currentLocale]; // Necessary?
-    formatter.calendar = [NSCalendar calendarWithIdentifier:NSCalendarIdentifierGregorian];
+    formatter.calendar = [[NSCalendar alloc] initWithCalendarIdentifier:NSCalendarIdentifierGregorian];
     return [formatter stringFromDate:self];
 }
 
